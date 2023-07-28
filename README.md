@@ -1,8 +1,8 @@
 # Galería Del Dulce Order Management Web Application
 
-[photo]
-
 Welcome to the Galería Del Dulce Order Management Web Application! This innovative Next.js 13-based web application utilizes the new App router to streamline the order management process. Its primary goal is to enhance the efficiency of order management for Galería Del Dulce, allowing staff to search or scan products while in-store and easily add them to the cart. At the end of the shopping process, customers can conveniently send their orders via email.
+
+<img width="1505" alt="homepage" src="https://github.com/pacoguerraq/galeria-del-dulce/assets/65269829/ed968fb9-9a91-4012-994e-bf8543332dc9">
 
 Site url: 
 
