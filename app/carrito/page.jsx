@@ -170,7 +170,7 @@ const Carrito = () => {
                                 </h2>
 
                                 {/* Lista de Productos */}
-                                <div className="mb-4">
+                                <div className="mb-6">
                                     {selectedProducts.map((product) => (
                                         <CartProduct key={product.id} product={product} />
                                     ))}

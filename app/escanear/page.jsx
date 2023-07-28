@@ -131,9 +131,8 @@ const Escanear = () => {
             </Link>
 
             {/* select menu */}
-            {devices && devices.length > 0 && currentCameraId && menuShown && (
+            {/* {devices && devices.length > 0 && currentCameraId && menuShown && (
                 <>
-                    {/* <label for="devices-options" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Selecciona el dispositivo</label> */}
                     <select
                         id="devices-options"
                         onChange={(e) => {
@@ -150,7 +149,7 @@ const Escanear = () => {
                         ))}
                     </select>
                 </>
-            )}
+            )} */}
 
             {/* camera */}
             <div id="reader" className='mt-2' style={{ width: '80vw' }}></div>

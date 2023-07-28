@@ -47,7 +47,7 @@ const ProductCard = ({ productInfo, stockInfo }) => {
     return (
         <>
 
-            <div className="w-80 bg-white shadow rounded-lg">
+            <div className="w-80 bg-white shadow rounded-lg mb-4">
 
                 {/* image */}
                 <div
