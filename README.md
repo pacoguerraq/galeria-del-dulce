@@ -1,34 +1,19 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Galería Del Dulce Order Management Web Application
 
-## Getting Started
+[photo]
 
-First, run the development server:
+Welcome to the Galería Del Dulce Order Management Web Application! This innovative Next.js 13-based web application utilizes the new App router to streamline the order management process. Its primary goal is to enhance the efficiency of order management for Galería Del Dulce, allowing staff to search or scan products while in-store and easily add them to the cart. At the end of the shopping process, customers can conveniently send their orders via email.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+Site url: 
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Key features
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- Effortless Product Search: Our web application simplifies the process of finding products, enabling staff to quickly locate items within the store's inventory via ID search or QR scan.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Seamless Cart Management: With just a few clicks, products can be added to the cart, providing an intuitive and user-friendly cart management system showing the total amount and price.
 
-## Learn More
+- Email Order Submission: Customers can finalize their orders by sending them via email, ensuring a hassle-free and straightforward checkout process.
 
-To learn more about Next.js, take a look at the following resources:
+## Tech stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This project is a Next JS 13 application using the new app router. It doesn't use any kind of database. It makes several calls to the iPos Shop API. There are some libraries used such as nodemailer, html5-qrcode, @mui/material and react-toastify. Tailwind CSS is used mostly for styling.
