@@ -26,9 +26,8 @@ const Escanear = () => {
         console.log('idCamera', idCamera);
         const html5QrCode = new Html5Qrcode("reader");
         html5QrCode.start(
-            idCamera,
+            { facingMode: "environment" },
             {
-                facingMode: "environment", // or user
                 fps: 10,    // Optional, frame per seconds for qr code scanning
                 qrbox: { width: 200, height: 200 }  // Optional, if you want bounded box UI
             },
@@ -54,6 +53,35 @@ const Escanear = () => {
                 // Start failed, handle it.
                 console.log('err', err);
             });
+        // html5QrCode.start(
+        //     idCamera,
+        //     {
+        //         facingMode: { exact: "environment" }, // or user
+        //         fps: 10,    // Optional, frame per seconds for qr code scanning
+        //         qrbox: { width: 200, height: 200 }  // Optional, if you want bounded box UI
+        //     },
+        //     (decodedText, decodedResult) => {
+        //         // do something when code is read
+        //         console.log('decodedText', decodedText);
+        //         setQrCodeValue(decodedText);
+        //         setMenuShown(false);
+        //         html5QrCode.stop().then((ignore) => {
+        //             // QR Code scanning is stopped.
+        //             console.log('ignore', ignore)
+        //             console.log('QR Code scanning is stopped.')
+        //             router.push(`/productos/${decodedText}`);
+        //         }).catch((err) => {
+        //             // Stop failed, handle it.
+        //             console.log('err', err);
+        //         });
+        //     },
+        //     (errorMessage) => {
+        //         // parse error, ignore it.
+        //     })
+        //     .catch((err) => {
+        //         // Start failed, handle it.
+        //         console.log('err', err);
+        //     });
     }
 
     useEffect(() => {
