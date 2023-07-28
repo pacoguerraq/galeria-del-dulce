@@ -5,10 +5,6 @@ import { useRouter } from "next/navigation";
 
 import Link from 'next/link';
 
-// To use Html5QrcodeScanner (more info below)
-import { Html5QrcodeScanner } from 'html5-qrcode';
-
-// To use Html5Qrcode (more info below)
 import { Html5Qrcode } from "html5-qrcode";
 
 const Escanear = () => {
@@ -64,10 +60,28 @@ const Escanear = () => {
         // This method will trigger user permissions
         Html5Qrcode.getCameras().then(devices => {
             if (devices && devices.length) {
+
                 console.log('devices', devices);
                 setDevices(devices);
-                var cameraId = devices[0].id;
+
+                var cameraId = null;
+
+                for (const device of devices) {
+                    console.log('device', device)
+                    if (device.kind === "videoinput" && device.facingMode === "environment") {
+                        cameraId = device.deviceId;
+                        console.log('back camera found')
+                        break;
+                    }
+                }
+
+                if (!cameraId) {
+                    cameraId = devices[0].id;
+                    console.log('back camera not found, using first camera')
+                }
+
                 setCurrentCameraId(cameraId);
+
             }
         }).catch(err => {
             // handle err
