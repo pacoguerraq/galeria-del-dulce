@@ -15,7 +15,12 @@ import DialogTitle from '@mui/material/DialogTitle';
 import { toast, ToastContainer } from 'react-toastify';
 import CartProduct from "@components/CartProduct"
 
+console.log(process.env.apiKey)
+
 const Carrito = () => {
+
+    const api_key = process.env.apiKey;
+    console.log(api_key)
 
     const router = useRouter();
 
@@ -79,7 +84,7 @@ const Carrito = () => {
             const response = await fetch(`https://lagaleriadeldulce.ipos.shop/api/v1/orders?type=light`, {
                 method: "POST",
                 headers: {
-                    'Authorization': `Bearer ${process.env.API_KEY}`,
+                    'Authorization': `Bearer ${api_key}`,
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
