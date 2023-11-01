@@ -22,6 +22,7 @@ const ProductCard = ({ productInfo, stockInfo }) => {
             description: productInfo.Description,
             name: productInfo.Name,
             price: productInfo.ProductVariations[0].FinalPrice,
+            variationID: productInfo.ProductVariations[0].ID,
             quantityRemaining: stockInfo.Quantity,
             quantitySelected: quantity,
         }

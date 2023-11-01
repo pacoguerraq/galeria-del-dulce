@@ -45,6 +45,7 @@ export default async function SingleProduct({ params }) {
     console.log(productInfo)
     let stockInfo = {}
     if (productInfo?.Data?.Name && productInfo?.Data?.ProductVariations.length > 0) {
+        console.log("productInfo?.Data?.ProductVariations[0]")
         console.log(productInfo?.Data?.ProductVariations[0])
         stockInfo = await getStockById(params.id, productInfo.Data.ProductVariations[0].ID)
         console.log('====================================');
