@@ -87,7 +87,7 @@ const Carrito = () => {
                         "Payments": [],
                         "LocationID": "1",
                         "SalesChannelID": null,
-                        "Notes": "Probando",
+                        "Notes": nombre,
                         "OrderDetails": newArray,
                         "User": "5531" // admin user id
                     }
