@@ -17,8 +17,6 @@ import CartProduct from "@components/CartProduct"
 
 const Carrito = () => {
 
-    const api_key = process.env.apiKey;
-
     const router = useRouter();
 
     const { selectedProducts, setSelectedProducts } = useSelectedProductsContext();
@@ -78,26 +76,22 @@ const Carrito = () => {
         console.log('newArray', newArray)
 
         try {
-            const response = await fetch(`https://lagaleriadeldulce.ipos.shop/api/v1/orders?type=light`, {
+            const response = await fetch(`/api/sendOrder`, {
                 method: "POST",
-                headers: {
-                    'Authorization': `Bearer ${api_key}`,
-                    'Content-Type': 'application/json',
-                },
                 body: JSON.stringify({
-                    "ClientID": "30", // specific client created for website
-                    "Delivery": 0.0,
-                    "DeliveryTax": 0.0,
-                    "DiscountPercentage": 0.0,
-                    "Payments": [],
-                    "LocationID": "1",
-                    "SalesChannelID": null,
-                    "Notes": "Probando",
-                    "OrderDetails": newArray,
-                    "User": "5531" // admin user id
+                    all: {
+                        "ClientID": "30", // specific client created for website
+                        "Delivery": 0.0,
+                        "DeliveryTax": 0.0,
+                        "DiscountPercentage": 0.0,
+                        "Payments": [],
+                        "LocationID": "1",
+                        "SalesChannelID": null,
+                        "Notes": "Probando",
+                        "OrderDetails": newArray,
+                        "User": "5531" // admin user id
+                    }
                 }),
-                // to avoid cache, new fetch on every request (although it takes more time)
-                cache: 'no-store'
             });
 
             if (response.ok) {
@@ -248,7 +242,7 @@ const Carrito = () => {
                                         <input
                                             type="text"
                                             className="block w-full p-4 pl-4 text-lg text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 outline-none"
-                                            placeholder="NOMBRE"
+                                            placeholder="Nombre"
                                             value={nombre}
                                             onChange={(e) => setNombre(e.target.value)}
                                             required
