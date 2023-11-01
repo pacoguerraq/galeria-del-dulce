@@ -15,12 +15,9 @@ import DialogTitle from '@mui/material/DialogTitle';
 import { toast, ToastContainer } from 'react-toastify';
 import CartProduct from "@components/CartProduct"
 
-console.log(process.env.apiKey)
-
 const Carrito = () => {
 
     const api_key = process.env.apiKey;
-    console.log(api_key)
 
     const router = useRouter();
 
